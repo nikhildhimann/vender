@@ -11,7 +11,8 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
 

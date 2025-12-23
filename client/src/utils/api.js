@@ -1,7 +1,9 @@
 // src/utils/api.js
 import axios from "axios";
 
-const API_BASE = "http://localhost:3000/api";
+// Use Vite environment variable when available (set VITE_API_URL),
+// otherwise fall back to localhost for local development.
+const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api";
 
 // Simple POST function
 export const apiPost = async (url, data) => {
